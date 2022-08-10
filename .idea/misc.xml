@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/dzibu/AndroidStudioProjects/AgendaFirebase/app/src/main/res/layout/activity_lista.xml" value="0.253125" />
+        <entry key="..\:/Users/dzibu/AndroidStudioProjects/AgendaFirebase/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/dzibu/AndroidStudioProjects/AgendaFirebase/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dzibu/AndroidStudioProjects/AgendaFirebase/app/src/main/res/layout/layout_contacto.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/dzibu/AndroidStudioProjects/AgendaFirebase/app/src/main/res/layout/layout_cotacto.xml" value="0.253125" />
       </map>
     </option>

@@ -3,8 +3,10 @@ package com.example.agendafirebase;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -98,17 +100,32 @@ public class ListaActivity extends ListActivity {
             }
             lblNombre.setText(objects.get(position).getNombre());
             lblTelefono.setText(objects.get(position).getTelefono1());
+
             btnBorrar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    borrarContacto(objects.get(position).get_ID());
-                    objects.remove(position);
-                    notifyDataSetChanged();
-                    Toast.makeText(getApplicationContext(),
-                            "Contacto eliminado con exito",
-                            Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder confirmar = new AlertDialog.Builder(ListaActivity.this);
+                    confirmar.setTitle("¿Borrar contacto?");
+                    confirmar.setMessage("Se descartara toda la informacion. ");
+                    confirmar.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            borrarContacto(objects.get(position).get_ID());
+                            objects.remove(position);
+                            notifyDataSetChanged();
+                            Toast.makeText(getApplicationContext(), "Contacto eliminado con exito",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    confirmar.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //Nada
+                        }
+                    }); confirmar.show();
                 }
             });
+
             btnModificar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
